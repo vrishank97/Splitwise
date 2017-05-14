@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <math.h>
 #include <string.h>
+#include <stdlib.h>
+
 //defining structure person
 typedef struct person{
     char* name;
@@ -8,7 +10,9 @@ typedef struct person{
     int amount_to_pay;
     int diff;
 } person;
-person group[n];
+person * group;
+
+int n;
 
 void sort(void);
 void settle(void);
@@ -16,8 +20,10 @@ void settle(void);
 int main(void){
 	
 	printf("Enter the number of members\n");
-	int n;
 	scanf("%d", &n);
+	
+	group=(person *)malloc(sizeof(person)*n);
+
 	printf("Enter the amount paid per person\n");
 	
 	for(int i=0; i<n; i++){
@@ -37,7 +43,7 @@ int main(void){
 	
 	for(int i=0; i<n; i++){
 		int temp;
-		printf("Person %d\n", i+1)
+		printf("Person %d\n", i+1);
 		scanf("%d\n", &temp);
 		(group[i]).amount_to_pay=temp;
 	}
@@ -61,7 +67,6 @@ int main(void){
 	        count_negative++;
 	}
 	
-	person group[]
 	
 	void sort(void);
 	void settle(void);
